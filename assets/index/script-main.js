@@ -43,7 +43,7 @@ function carregaBiblioteca(){
             `
             <div class="cardMusica">
                 <div class="cardImgWrapper">
-                    <img src="../assets/imagens/capasMusica/${musicas[index].capa}" class="cardImg" alt="capa da Música">
+                    <img src="./assets/imagens/capasMusica/${musicas[index].capa}" class="cardImg" alt="capa da Música">
                     <button class="btn btn-playCard btnSobreImg" onclick="togglePlayPause(${index})"><i class="bi bi-play-circle-fill"></i></button>
                 </div>
                 <div class="cardMusica-conteudo">
@@ -92,7 +92,7 @@ function carregaPlaylist(){
         `
         <li class="item-Playlist" id="${playlist[index].id}">
             <div class="infoMusica">
-                <img src="../assets/imagens/capasMusica/${playlist[index].file}.jpg" alt="Capa da musica na playlist">
+                <img src="./assets/imagens/capasMusica/${playlist[index].file}.jpg" alt="Capa da musica na playlist">
                 <div class="infoMusicaTextos">
                     <h3>${playlist[index].nomeMusica}</h3>
                     <p>${playlist[index].artista}</p>
@@ -130,7 +130,7 @@ function addAPlaylist(idMusica){
         `
         <li class="item-Playlist">
             <div class="infoMusica">
-                <img src="../assets/imagens/capasMusica/${musicaParaAdd.file}.jpg" alt="Capa da musica na playlist">
+                <img src="./assets/imagens/capasMusica/${musicaParaAdd.file}.jpg" alt="Capa da musica na playlist">
                 <div>
                     <h3>${musicaParaAdd.nomeMusica}</h3>
                     <p>${musicaParaAdd.artista}</p>
@@ -148,7 +148,7 @@ function attArmazenamentoLocal(){
 }
 
 function startPlayerFullPlaylist(){
-    location.href = '../reprodutor/reprodutor.html';
+    location.href = 'reprodutor/reprodutor.html';
 }
 
 /**Funções do Player**/

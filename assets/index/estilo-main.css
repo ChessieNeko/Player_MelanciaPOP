@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'Neucha-Regular';
-    src: url('/assets/fontes/Neucha-Regular.ttf') format('truetype');
+    src: url('../fontes/Neucha-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'AnnieUYT-Regular';
     /*src: url('../assets/fontes/AnnieUYT-Regular.ttf') format('truetype');*/
-    src: url('/assets/fontes/AnnieUYT-Regular.ttf') format('truetype');
+    src: url('../fontes/AnnieUYT-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }

@@ -11,8 +11,8 @@ const likeADream = {
     id: '1',
     nomeMusica : 'Like a Dream',
     artista : 'MINNIE',
-    file : 'likeADream',
-    capa: 'likeADream.jpg',
+    file : 'LikeADream',
+    capa: 'LikeADream.jpg',
     album: 'Lovely Runner',
     liked: false
 };
