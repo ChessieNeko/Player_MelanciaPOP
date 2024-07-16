@@ -63,8 +63,8 @@ function tocarMusicaPorId(idMusica) {
     if (musicaSelecionada) {
         nomeMusica.innerText = musicaSelecionada.nomeMusica;
         nomeBanda.innerText = musicaSelecionada.artista;
-        capaMusica.src = `../assets/imagens/capasMusica/${musicaSelecionada.capa}`;
-        musica.src = `../assets/musicas/${musicaSelecionada.file}.mp3`;
+        capaMusica.src = `assets/imagens/capasMusica/${musicaSelecionada.capa}`;
+        musica.src = `assets/musicas/${musicaSelecionada.file}.mp3`;
 
         tocarMusica();
         isPlaying = true;
