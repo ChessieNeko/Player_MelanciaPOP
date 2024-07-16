@@ -1,0 +1,773 @@
+@font-face {
+    font-family: 'Neucha-Regular';
+    src: url('../assets/fontes/Neucha-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'AnnieUYT-Regular';
+    src: url('../assets/fontes/AnnieUYT-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    background-image: linear-gradient(
+        rgb(219, 137, 154),
+        rgb(223, 96, 121)
+    );
+
+    height: 100%;
+}
+
+main{
+    padding: 0 50px;
+}
+
+.titulo-playlist{
+    padding-top: 0;
+    margin-top: 0;
+
+    font-family: 'AnnieUYT-Regular', sans-serif;
+    color: white;
+    
+    text-shadow: 2px 2px 8px #000000;
+}
+main .titulo-playlist{
+    padding-top: 10px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.nav-menu{
+    background-image: linear-gradient(
+        rgb(135, 193, 114),
+        rgb(114, 185, 104)
+    );
+
+    position: sticky; /* Adiciona position: sticky */
+    top: 0; /* Define o topo como ponto de fixação */
+    z-index: 1000; /* Adiciona um z-index alto para garantir que o elemento fique sobre outros elementos */
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.logo-nome{
+    font-family: 'AnnieUYT-Regular', sans-serif;
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    line-height: 12.5vh;
+}
+
+.logo-nome img{
+    height: 12.5vh;
+}
+
+.grupo-barraPesquisa{
+    box-sizing: border-box;
+    display: flex;
+    
+    min-width: 50%;
+    width: 50%;
+    height: 60px;
+
+    padding: 0;
+    border-radius: 15px;
+    outline: none; 
+    background-color: rgb(213, 249, 201);
+    overflow: hidden;
+}
+
+.barra-pesquisa{
+    background-color: inherit;
+    border: none;
+
+    border-radius: 15px 0 0 15px;
+    height: 100%;
+    padding: 0 1.25rem;/*20px*/
+    outline: none; /* Remove a borda de foco padrão */
+    width: 100%;
+    font-size: 1.25rem;
+}
+
+.grupo-barraPesquisa button{
+    color: crimson;
+    background-color: inherit;
+    height: 100%;
+    padding: 0 0.938rem;/*15px*/
+    font-size: 1.875rem;/*30px*/
+    
+    border: none;
+    border-radius: 0 15px 15px 0;
+}
+
+.grupo-barraPesquisa:focus-within {
+    outline: 3px solid rgb(44, 83, 44); /* Muda o contorno para verde quando focado */
+}
+
+.grupo-barraPesquisa button i:hover{
+    text-shadow: 2px 2px 8px #000000;
+}
+
+#btn-playlist label{
+    padding: 10px; 
+    cursor: pointer;
+}
+
+#btn-playlist > label:hover{
+    color: crimson;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+#nav-playlist{
+    box-shadow: inset 0px 10px 10px -10px rgb(114, 185, 104);
+    background-image: linear-gradient(
+        rgb(114, 185, 104),
+        rgb(223, 96, 121)
+    );
+    flex-direction: column;
+    width: 450px;
+    height: 90vh;
+    border-radius: 0 0 0 18px;
+
+    position: fixed;
+
+    z-index: 100000;
+    right: -450px;/**/ 
+
+    transition: all 0.3s linear;
+    padding-left: 10px;
+}
+
+#infoPlaylist{
+    display: flex;
+    padding: 20px 0;
+    justify-content: space-around;
+}
+
+#infoPlaylist h2{
+    color: white;
+    font-size: 35px;
+    font-family: 'AnnieUYT-Regular', sans-serif;
+}
+#infoPlaylist #start-player:hover{
+    color: crimson;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+#start-player{
+    border: none;
+    background-color: inherit;
+}
+#nav-playlist img{
+    height: 80px;
+}
+
+#menu-checked{
+    display: none;
+}
+
+#menu-checked:checked ~ #nav-playlist{
+    right: 0;
+}
+
+.item-Playlist{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.item-Playlist:hover{
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.infoMusica{
+    display: flex;
+    align-items: flex-end;
+}
+
+.infoMusicaTextos{
+    padding: 10px;
+    color: rgb(19, 46, 24);
+    font-family: sans-serif;
+}
+
+#btn-apagaMusica{
+    margin-right: 5px;
+    background-color: crimson;
+    border-radius: 5px;
+    padding: 10px 15px;
+
+    
+    transition: font-size 0.3s ease;
+}
+
+#btn-apagaMusica:hover{
+    font-size: 1.75rem;
+}
+
+/*****************/
+#page-body {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(238px, 1fr));
+    height: 100%;
+    width: 100%;
+    
+    box-sizing: border-box;
+    justify-items: center;
+    gap: 10px;
+}
+
+.cardMusica{
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 10px;
+
+    width: 239px;
+    height: 360px;
+
+    max-width: 239px;
+
+    padding: 0.7rem 0.6rem 1.80rem 0.6rem;
+}
+
+.cardMusica:hover{
+    background-image: linear-gradient(
+         rgb(229, 99, 125),
+         rgb(228, 118, 140)
+    );
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /*border: 1px solid rgb(26, 69, 26);*/
+}
+
+.cardImg{
+    height: 220px;
+    border-radius: 10px 10px; /* Arredonda apenas as bordas superiores da imagem */
+}
+
+.cardMusica-conteudo{
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 0.938rem;
+}
+
+.card-titulo{
+    font-family: 'Neucha-Regular', sans-serif;
+    font-size: 1.563rem;
+}
+
+.cardMusicaInfoBtn{
+    display: flex;
+}
+
+.cardMusicaInfo{
+    display: flex;
+    flex-direction: column;
+    padding-top: .5rem;
+
+    flex-grow: 1;
+}
+
+.card-texto{
+    padding-top: 0.313rem;
+    color: rgb(72, 77, 73);
+    font-family: sans-serif;
+}
+
+#btn-addMusica{
+    padding-top: 10px;
+}
+
+#btn-addMusica i{
+    color:rgb(26, 69, 26);
+    font-size: 2.5rem;
+
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    transition: font-size 0.3s ease;
+}
+/*Btn aparece com hover no card*/
+.cardMusica:hover #btn-addMusica i{
+    opacity: 1;
+}
+
+#btn-addMusica i:hover{
+    font-size: 3rem;
+}
+
+.btn{    
+    cursor: pointer;
+    border-color: transparent;
+    background-color: transparent;
+    border: none;
+
+    outline: none;
+    box-shadow: none;
+    font-size: 1.5em;
+
+    color: rgb(253, 255, 255);
+}
+
+
+/*****************************/
+/* Wrapper para a imagem do card */
+.cardImgWrapper {
+    position: relative;
+}
+
+/*Btn que aparece sobre a imagem*/
+.btnSobreImg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+
+    transition: opacity 0.7s ease;
+}
+/*estilos aplicados atraves do JS*/
+.btn-playCard.visivel{
+    opacity: 1;
+}
+/****/
+.cardImgWrapper:hover .btnSobreImg {
+    opacity: 1;
+}
+
+/* Estilização adicional para o botão, se necessário */
+.btnSobreImg i {
+    font-size: 3.7rem;
+    color: white;
+
+    transition: font-size 0.3s ease;
+}
+
+.btnSobreImg i:hover {
+    font-size: 4.5rem;
+}
+
+/***Player Bottom***/
+.playerBottom{
+    background-color: rgb(42, 110, 73);
+    display: flex;
+    justify-content: space-between;
+
+    
+    width: 100%;
+    padding: 12px;
+    padding-right: 0;
+}
+
+#footer-player{
+    display: flex;
+    position: fixed;
+    
+    bottom: -30vh;
+    left: 0;
+    right: 0;
+
+    transition: bottom 0.5s ease-in-out; /* Animação suave de transição */
+}
+#footer-player.show {
+    bottom: 0; /* Aparece com animação */
+}
+
+#btn-showPlayer{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 10px;
+    background-color: rgb(114, 185, 104);
+    border-radius: 5px 5px 0 0;
+    display: none;/*inicia não existindo*/
+}
+#btn-showPlayer i{
+    font-size: 2.3rem;
+    color: rgb(223, 96, 121);
+    padding: 3px;
+}
+
+#btn-showPlayer.mostra{
+    display: inline;
+}
+/**Info Musica**/
+.capaThumb{
+    height: 120px;
+    border-radius: 10px 10px;
+}
+.grupoInfoMusica{
+    display: flex;
+    align-items: center;
+    font-family:  'Neucha-Regular', sans-serif;
+}
+
+.infoMusicaPlayer{
+    font-size: 30px;
+    padding: 0 15px;
+}
+.infoMusicaPlayer p{
+    font-size: 23px;
+    color: rgb(30, 30, 30);
+}
+
+.grupoBarra{
+    min-width: 400px;
+    max-width: 50%; 
+    width: 100%;
+
+    align-content: center;
+}
+
+
+#time-box{
+    display: flex;
+    justify-content: space-between;
+    font-size: smaller;
+}
+
+#btn-container{
+    display: flex;
+    justify-content: center;
+
+    gap: 30px;
+}
+
+.btn-nav{    
+    font-size: 2.4em;
+}
+
+.btn-biggest{
+    font-size: 3em;
+}
+
+/*Volume*/
+.grupoVolume{
+    display: flex;
+    align-items: center;
+}
+
+.btn-volume{
+    font-size: 2.3em;    
+}
+#btn-hide-footer{
+    margin-left: 20px;
+}
+
+
+/*slider volume*/
+input[type="range"] {
+    -webkit-appearance: none; 
+    appearance: none;
+    background: #d5f9c9;
+    border-radius: 10px;
+    width: 100%;
+}
+
+/* Estilizando a linha de progresso */
+input[type="range"]::-webkit-slider-runnable-track {
+    background: rgb(135, 193, 114);
+    width: 100%;
+    height: 7px;/*espessura do slider*/
+    border-radius: 10px;
+}
+
+/*Editando a Bolinha*/
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: rgb(222, 85, 112);
+    cursor: pointer;
+    border-radius: 50%;
+    margin-top: -4px; /*Ajusta a posição da bolinha no slider*/
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+    width: 17px;
+    height: 17px;
+}
+/* Estilizando o progresso antes da bolinha */
+input[type="range"]::-webkit-slider-runnable-track::before {
+    content: '';
+    height: 7px; /* Espessura do progresso */
+    background: rgb(222, 85, 112);
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: calc(100% * (var(--value, 50) / 100)); /* Ajusta o progresso */
+}
+/***************/
+
+/***Barra de Progresso***/
+#container-barraProgresso{
+    cursor: pointer;
+}
+
+#progress-bar {
+    background-color:rgb(120, 134, 125);
+    height: 3px;
+    width: 100%;
+    border-radius: 15px;
+
+    margin-bottom: .3em;
+}
+
+#progress-bar:hover{
+    background-color:rgb(73, 86, 78);
+}
+
+#current-progress {
+    --progresso:0%;
+    background-color: rgb(222, 85, 112);
+    height: inherit;
+    width: var(--progresso);
+    border-radius: inherit;
+    height: 5px;
+}
+
+#current-progress:hover {
+    box-shadow: 0px 0px 10px rgb(223, 152, 166);
+}
+
+/*Girar btns de skip*/
+.bi-arrow-clockwise {
+    display: inline-block; /*o elemento i precisa ser inline-block para funcionar a rotação*/
+    transform: rotate(45deg);
+}
+.bi-arrow-counterclockwise {
+    display: inline-block; /*o elemento i precisa ser inline-block para funcionar a rotação*/
+    transform: rotate(-45deg);
+}
+
+
+/***Aux Site***/
+.texto-nao-selecionavel {
+    user-select: none; /* Impede a seleção de texto no desktop */
+    -webkit-user-select: none; /* Impede a seleção de texto no Chrome, Safari e iOS */
+    -moz-user-select: none; /* Impede a seleção de texto no Firefox */
+    -ms-user-select: none; /* Impede a seleção de texto no Internet Explorer e Edge antigo */
+}
+
+
+@media screen and (max-width: 970px){
+    body{
+        height: 100%;
+    }
+    main{
+        padding: 0 30px;
+    }
+    .logo-nome span{
+        display: none;
+    }
+    
+    .logo-nome{
+        font-family: 'AnnieUYT-Regular', sans-serif;
+        font-size: 60px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .grupo-barraPesquisa{
+        background-color: rgb(213, 249, 201);
+        display: flex;
+        justify-content: stretch;
+        align-items: center;
+        
+        height: 60px;
+        width: 35%;
+        min-width: 60%;
+        padding: 0;
+        border-radius: 15px;
+    
+        outline: none; /* Remove o outline padrão */
+    }
+    
+    .barra-pesquisa{
+        flex-grow: 1;
+        box-sizing: border-box;
+        background-color: rgb(213, 249, 201);
+        border: none;
+    
+        border-radius: 15px 0 0 15px;
+        height: 100%;
+        padding: 0 20px;
+        outline: none; /* Remove a borda de foco padrão */
+    
+        font-size: 20px;
+    }
+
+    #nav-playlist{
+        width: 350px;
+
+        right: -350px;
+    }
+
+    #page-body {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+    /***Player Bottom***/
+    /**Info Musica**/
+    .capaThumb{
+        height: 90px;
+    }
+    .infoMusicaPlayer{
+        font-size: 25px;
+    }
+    .infoMusicaPlayer p{
+        font-size: 18px;
+    }
+    /**Barra de Progresso**/
+    .grupoBarra{
+        min-width: 300px;
+        width: 100%;
+
+        align-content: center;
+    }
+    /*Btns*/
+    .btn-nav{    
+        font-size: 2em;
+    }
+    
+    .btn-biggest{
+        font-size: 2.5em;
+    }
+    /**Volume**/
+    .btn-volume{
+        font-size: 1.7em;    
+    }
+    /* Estilizando a linha de progresso */
+    input[type="range"]::-webkit-slider-runnable-track{
+        height: 5px;
+    }
+}
+
+/**/
+@media screen and (max-width: 608px){
+    body{
+        height: 100vh;
+    }
+    main{
+        padding: 20px 0;
+    }
+
+    .nav-menu{
+        width: 608px;
+        padding-right: 25px;
+    }
+    
+    .logo-nome{
+        height: 9vh;
+    }
+    
+    .logo-nome img{
+        height: 100%;
+    }
+    
+    .grupo-barraPesquisa{
+        height: 45px;
+    }
+    
+    #btn-playlist label{
+        padding: 10px; 
+        cursor: pointer;
+    }
+    
+    #btn-playlist > label:hover{
+        color: crimson;
+        text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    }
+    
+    #nav-playlist{
+        width: 50vw;    
+        right: -60vw;
+    }
+
+    /****Body Card****/
+    #btn-playlist span{
+        display: none;
+    }
+
+    #page-body {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        height: 100%;
+        width: 100%;
+        
+        box-sizing: border-box;
+        justify-items: center;
+        gap: 10px;
+    }
+    
+    .cardMusica{
+        width: 150px;
+        height: 230px;
+
+        max-width: 150px;
+        padding-bottom: 50px;
+        display: flex;
+    }
+
+    .cardImg{
+        height: 130px;
+        border-radius: 10px 10px;
+    }
+
+    /****/
+    .cardMusica-conteudo{
+        padding: 0;  
+    }
+    
+    .card-titulo{
+        font-family: 'Neucha-Regular', sans-serif;
+        font-size: 20px;
+    }
+    
+    .card-texto{
+        padding-top: 0.313rem;
+        color: rgb(72, 77, 73);
+        font-family: sans-serif;
+        font-size: 10px;
+    }
+    
+    #btn-addMusica i{
+        color:rgb(26, 69, 26);
+        font-size: 2rem;
+    
+        opacity: 1;
+        transition: font-size 0.3s ease;
+    }
+    
+    #btn-addMusica i:hover{
+        font-size: 2.3rem;
+    }
+
+    /**Btn do Card**/
+    .btnSobreImg i {
+        font-size: 2.5rem;
+    }
+
+    .btnSobreImg i:hover {
+        font-size: 3.5rem;
+    }
+
+    /***Player Bottom***/
+    /**Info Musica**/
+    .capaThumb{
+        display: none;
+    }
+    /************************************/
+}

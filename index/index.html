@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melancia POP!</title>
+
+    <!--Bootstrap Icons-->
+    <link rel="stylesheet" href="../assets/bootstrap-icons-1.11.3/font/bootstrap-icons.min.css">
+    
+    <!--Favicon-->
+    <link rel="icon" href="../assets/favicon/favicon.ico" type="image/x-icon">
+    <!--Meus estilos-->
+    <link rel="stylesheet" href="../assets/normalize.css">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header id="page-header" class="nav-menu">
+        <div class="logo-nome">
+            <img src="../assets/imagens/logo1.png" alt="Logo MelanciaPOP">
+            <span>MelanciaPOP!</span>
+        </div>
+
+        <div class="grupo-barraPesquisa">
+            <input id="palavra-busca" type="text" class="barra-pesquisa" placeholder="Encontre esta Música!" aria-label="Username" aria-describedby="basic-addon1"/>
+            
+            <button id="btn-busca" type="button" class="btn"><i class="bi bi-search"></i></button>
+        </div>
+        
+        <!-- Mostra Playlist que vai tocar -->
+        <input type="checkbox" id="menu-checked">
+        <button id="btn-playlist" type="button" class="btn">
+            <label for="menu-checked">
+                <span>Playlist</span><i class="bi bi-music-note-list"></i>
+            </label>
+        </button>
+    </header>
+    
+    <div id="nav-playlist">
+        <div id="infoPlaylist">
+            <h2 class="titulo-playlist">Nome da Playlist</h2>
+            <button id="start-player" type="button" class="btn">
+                <i class="bi bi-play-fill"></i>Play
+            </button>
+        </div>
+        <ul id="listaMusicas">
+        </ul>
+    </div>
+
+    <main>
+        <h1 class="titulo-playlist">Nome da Playlist</h1>
+        <div id="page-body"></div>
+    </main>
+
+    <button id="btn-showPlayer" class="btn"><i class="bi bi-caret-up-fill"></i></button>
+    <footer id="footer-player">
+        <div class="playerBottom texto-nao-selecionavel">
+            <div class="grupoInfoMusica">
+                <audio id="musica-audio"></audio>
+                <img id="capa-musica" class="capaThumb" alt="capa da música">
+                <div class="infoMusicaPlayer">
+                    <h4 id ="musica-nome">Nome da Música</h4>
+                    <p id ="banda-nome">Nome do Artista</p>
+                </div>
+            </div>
+
+            <div class="grupoBarra">
+                <div id="container-barraProgresso">
+                    <div id="progress-bar">
+                        <div id = "current-progress"></div>
+                    </div>
+                    <div id="time-box">
+                        <div id="tempo-musica">00:00</div>
+                        <div id="tempo-total">00:00</div>
+                    </div>
+                </div>
+                <div id="btn-container">
+                    <button id="btn-shuffle" class="btn"><i class="bi bi-shuffle"></i></button>
+                    <button id="btn-volta10sec" class="btn btn-nav"><i class="bi bi-arrow-counterclockwise"></i></button>
+                    
+                    <button id="btn-play" class="btn btn-biggest"><i class="bi bi-play-circle-fill"></i></button>
+
+                    <button id="btn-pula10sec" class="btn btn-nav"><i class="bi bi-arrow-clockwise"></i></button>
+                    <button id="btn-repeat" class="btn"><i class="bi bi-repeat"></i></button>
+                </div>
+            </div>
+
+            <div class="grupoVolume">
+                <button id="btn-icon-volume" class="btn btn-volume" >
+                    <i class="bi bi-volume-down-fill"></i>
+                </button>
+                <input type="range" id="volume-control" min="0" max="1" step="0.01" value="0.05">
+                
+                <button id="btn-hide-footer" class="btn btn-outline-light"><i class="bi bi-caret-down-fill"></i></button>
+            </div>
+        </div>
+    </footer>
+    <!-- control + k + c comenta texto selecionado e control + k + u descomenta-->
+
+<!--Meu JS-->
+<script src="../assets/scriptsComuns/musicas.js"></script>
+<script src="../assets/scriptsComuns/playerMusica.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
