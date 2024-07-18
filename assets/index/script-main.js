@@ -65,7 +65,6 @@ function carregaBiblioteca(){
 function clickBusca(){
     const palavraNormalizada = palavraBusca.value.trim().toLowerCase();
     if(palavraBusca.value.trim() === ''){
-        alert('Quer Buscar o vazio disgraça?');
         return;
     }
     musicas = [...bibliotecaMusicas];
@@ -107,11 +106,9 @@ function carregaPlaylist(){
 function removeDaPlaylist(idMusica){
     const musicaElement = document.getElementById(idMusica);
     if (musicaElement) {
-        console.log('removendo...');
         musicaElement.remove();
     }
     playlist = playlist.filter((musica) => musica.id !== idMusica);
-    console.log('sla mano');
 
     attArmazenamentoLocal();
     carregaPlaylist();

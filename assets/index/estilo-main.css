@@ -457,6 +457,11 @@ main .titulo-playlist{
     font-size: 3rem;
 }
 
+.grupoVolumeBTN{
+    display: flex;
+    gap: 1rem;
+}
+
 /*Volume*/
 .grupoVolume{
     display: flex;
@@ -589,7 +594,7 @@ input[type="range"]::-webkit-slider-runnable-track::before {
         justify-content: stretch;
         align-items: center;
         
-        height: 3.75rem;
+        height: 3rem;
         width: 35%;
         min-width: 60%;
         padding: 0;
@@ -611,11 +616,13 @@ input[type="range"]::-webkit-slider-runnable-track::before {
     
         font-size: 1.25rem;
     }
-
+    #btn-playlist{
+        margin-right: 1rem;
+    }
     #nav-playlist{
-        width: 350px;
+        width: 21.875rem;
 
-        right: -350px;
+        right: -21.875rem;
     }
 
     #page-body {
@@ -624,13 +631,13 @@ input[type="range"]::-webkit-slider-runnable-track::before {
     /***Player Bottom***/
     /**Info Musica**/
     .capaThumb{
-        height: 90px;
+        height: 5.625rem;
     }
     .infoMusicaPlayer{
-        font-size: 25px;
+        font-size: 1.563rem;
     }
     .infoMusicaPlayer p{
-        font-size: 18px;
+        font-size: 1.125rem;
     }
     /**Barra de Progresso**/
     .grupoBarra{
@@ -672,7 +679,7 @@ input[type="range"]::-webkit-slider-runnable-track::before {
     }
     
     .logo-nome{
-        height: 9vh;
+        height: 5rem;
     }
     
     .logo-nome img{
@@ -680,7 +687,7 @@ input[type="range"]::-webkit-slider-runnable-track::before {
     }
     
     .grupo-barraPesquisa{
-        height: 45px;
+        height: 2.813rem;
     }
     
     #btn-playlist label{

@@ -136,4 +136,7 @@ button:focus {
         box-sizing: border-box;
         margin: 0 10em;
     }
+    .grupoVolume{
+        display: none;
+    }
 }

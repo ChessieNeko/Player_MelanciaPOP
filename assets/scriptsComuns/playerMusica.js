@@ -57,7 +57,6 @@ function tocarMusica(){
 }
 
 function tocarMusicaPorId(idMusica) {
-    console.log(`ID chamado ${idMusica}`);
     const musicaSelecionada = musicas.find(musica => musica.id === idMusica.toString());
 
     if (musicaSelecionada) {
