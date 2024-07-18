@@ -14,11 +14,12 @@
 
 body{
     background-image: linear-gradient(
-        rgb(219, 137, 154),
+        rgb(237, 172, 185),
         rgb(223, 96, 121)
     );
 
     height: 100%;
+    font-family: sans-serif;
 }
 
 main{
@@ -58,14 +59,14 @@ main .titulo-playlist{
 
 .logo-nome{
     font-family: 'AnnieUYT-Regular', sans-serif;
-    font-size: 3.75rem;
+    font-size: 3.5rem;
     display: flex;
     align-items: center;
-    line-height: 12.5vh;
+    line-height: 10vh;
 }
 
 .logo-nome img{
-    height: 12.5vh;
+    height: 10vh;
 }
 
 .grupo-barraPesquisa{
@@ -74,7 +75,7 @@ main .titulo-playlist{
     
     min-width: 50%;
     width: 50%;
-    height: 3.75rem;
+    height: 3.5rem;
 
     padding: 0;
     border-radius: 15px;
@@ -114,6 +115,9 @@ main .titulo-playlist{
     text-shadow: 2px 2px 8px #000000;
 }
 
+#btn-playlist{
+    margin-right: 2rem;
+}
 #btn-playlist label{
     padding: 0.625rem; 
     cursor: pointer;
@@ -206,12 +210,12 @@ main .titulo-playlist{
     border-radius: 5px;
     padding: 0.625rem 0.938rem;
 
-    
+    font-size: 1.25rem;
     transition: font-size 0.3s ease;
 }
 
 #btn-apagaMusica:hover{
-    font-size: 1.75rem;
+    font-size: 1.5rem;
 }
 
 /*****************/
@@ -245,7 +249,7 @@ main .titulo-playlist{
 .cardMusica:hover{
     background-image: linear-gradient(
          rgb(229, 99, 125),
-         rgb(228, 118, 140)
+         rgb(227, 133, 152)
     );
 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -806,7 +810,9 @@ input[type="range"]::-webkit-slider-runnable-track::before {
     .grupo-barraPesquisa{
         height: 45px;
     }
-    
+    #btn-playlist{
+        margin-right: 0;
+    }
     #btn-playlist label{
         padding: 0.625rem; 
         cursor: pointer;

@@ -136,7 +136,7 @@ function addAPlaylist(idMusica){
                     <p>${musicaParaAdd.artista}</p>
                 </div>
             </div>
-            <button id="btn-apagaMusica" onclick="removeDaPlaylist('${musicaParaAdd.id}')"><i class="bi bi-trash3-fill"></i></button>
+            <button id="btn-apagaMusica" class="btn" onclick="removeDaPlaylist('${musicaParaAdd.id}')"><i class="bi bi-trash3-fill"></i></button>
         </li>
         `;
 
