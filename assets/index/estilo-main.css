@@ -783,14 +783,14 @@ input[type="range"]::-webkit-slider-runnable-track::before {
 /**Mobile**/
 @media screen and (max-width: 390px){
     body{
-        height: 100vh;
+        height: 100%;
         width: 100%;
     }
 
     main{
         padding: 1.25rem 0;/**/
     }
-
+    /**/
     .nav-menu{
         width: 100%;
     }
